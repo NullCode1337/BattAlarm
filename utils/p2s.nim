@@ -1,3 +1,4 @@
+# MEGA WIP
 import os, winim/mean
 
 var
