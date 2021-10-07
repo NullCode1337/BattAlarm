@@ -1,0 +1,6 @@
+{
+    "healthCheckerMode": true,
+    "highestPercentage":  60,
+    "criticalPercentage": 10,
+    "remindEvery": 6
+}
