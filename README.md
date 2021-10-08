@@ -9,12 +9,12 @@
 
 ## Config.json explanation
 <p align=center>
-   <img src="https://user-images.githubusercontent.com/70959549/136572023-1e9a906e-5d8c-4eaf-925a-f09e5930f643.png" alt="config.json expl"/>
+   <img src="https://user-images.githubusercontent.com/70959549/136614148-6ed72e03-0a38-40d3-862d-830e739b268a.png" alt="config.json expl"/>
 </p>
 
 ## TODO:
 - [ ] Cross Platform support
-- [X] Source code improvement
 - [ ] Add more things to README
+- [X] <strike>Source code improvement</strike>
 
 ##### Currently tested on Windows 10 only (*Nix support soon:tm:)
