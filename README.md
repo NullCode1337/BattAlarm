@@ -5,7 +5,6 @@
 ## Features:
 1) As lightweight as possible (400kb)
 2) As annoying as possible (annoying-ness can be changed by using `remindEvery` in `config.json`)
-3) Hopefully cross-platform in the future
 4) That's it. This software is meant for 1 job and 1 job only
 
 ## Config.json explanation
@@ -15,7 +14,7 @@
 
 ## TODO:
 - [ ] Cross Platform support
-- [ ] Source code improvement
-- [ ] Dude the readme is pretty much vacant lmfao
+- [X] Source code improvement
+- [ ] Add more things to README
 
 ##### Currently tested on Windows 10 only (*Nix support soon:tm:)
