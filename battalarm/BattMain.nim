@@ -1,19 +1,25 @@
 import std/os
-import BattTestGUI
-from AudWrapper import play
+import std/strformat
+import AudioPlayer, BattProcs, BattVars, GUI_Helper
 
-const a: string = "b"
-  
-if checker: 
-    runGUI()
+when defined(windows): 
+    let str_rm = " seconds\n\nThis window will be hidden in 5 seconds..."
+else: 
+    let str_rm = " seconds"
+    
+if checker: runGUI()
 else:
-    echo "BattHider - By NullCode\n-----------------------"
-    echo "\nYour chosen configuration settings:"
-    echo "Highest Battery level: " & $highest & "%"
-    echo "Critical Battery level: " & $critical & "%"
-    echo "You will be reminded every " & $rmints & " seconds\n\nThis window will be hidden in 5 seconds..."
+    echo &"""BattHider - By NullCode
+-----------------------
+
+Your chosen configuration settings:
+-----------------------------------
+Highest Battery level: {$highest}%
+Critical Battery level: {$critical}%
+You will be reminded every: {$rmints}{str_rm}"""
+
     sleep(5000)
-    hideWindow()
+    when defined(windows): hideWindow()
     
     while a == "b":
         if checkLife() >= highest:
