@@ -27,7 +27,7 @@ proc isCharging*(): bool =
             of 8: return true
             of 9: return true
             else: return false
-    else:
+   else:
         var status_raw = "wip"
         
 when defined(windows):
