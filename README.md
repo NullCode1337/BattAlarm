@@ -3,9 +3,9 @@
 <h4 align=center>Lightweight battery alarm application that aims to be cross-platform</h4>
 
 ## Features:
-1) As lightweight as I can possibly make it (400kb)
-2) As annoying as possible (you can change the annoying-ness by using the )
-3) What else do you want it to do?
+1) As lightweight as is possible by me (400kb)
+2) As annoying as is possible (annoying-ness can be changed by using `config.json`)
+3) That's it. This software is meant for 1 job and 1 job only
 
 ## TODO:
 - [ ] Cross Platform support
