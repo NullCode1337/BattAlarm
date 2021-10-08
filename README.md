@@ -2,8 +2,8 @@
 
 <h4 align=center>Lightweight battery alarm application that aims to be cross-platform</br></br>
 <img src="https://img.shields.io/badge/Maintained%3F-yes-blue.svg" alt="Maintained Badge">
-<img src="https://visitor-badge.laobi.icu/badge?page_id=NullCode-Utilities.BattAlarm&title=Visitor" alt="Visitors Badge">
-<img src="https://img.shields.io/github/issues/NullCode-Utilities/BattAlarm.svg" alt="Issues Badge"></h4>
+<img src="https://img.shields.io/github/issues/NullCode-Utilities/BattAlarm.svg" alt="Issues Badge">
+<img src="https://visitor-badge.laobi.icu/badge?page_id=NullCode-Utilities.BattAlarm&title=Visitor" alt="Visitors Badge"></h4>
 
 ## Features:
 1) As lightweight as possible (400kb)
