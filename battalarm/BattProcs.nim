@@ -1,17 +1,19 @@
 import BattVars 
-import std/strscans
-from std/strutils import replace
+import std/strutils
 from std/osproc   import execCmdEx
-when defined(windows): import winim/lean
+when defined(windows): 
+    import winim/lean
+    import std/strscans
 
 proc checkLife*(): int = 
-   when defined(windows):
-       var life_raw = execCmdEx("WMIC PATH Win32_Battery Get EstimatedChargeRemaining")[0].replace("\n", "")
-       if not scanf(life_raw, "EstimatedChargeRemaining$s$i", life): # Thanks beef331, impbox
-          raise newException(ValueError, "Invalid EstimatedCharge")
-       else: return life
-   else:
-       var life = execCmdEx("cat /sys/class/power_supply/BAT0/capacity")[0] # WIP
+    when defined(windows):
+        var life_raw = execCmdEx("WMIC PATH Win32_Battery Get EstimatedChargeRemaining")[0].replace("\n", "")
+        if not scanf(life_raw, "EstimatedChargeRemaining$s$i", life): # Thanks beef331, impbox
+            raise newException(ValueError, "Invalid EstimatedCharge")
+        else: return life
+    else:
+        life = strip(execCmdEx("cat /sys/class/power_supply/BAT0/capacity")[0]).parseint # WIP
+        return life
 
 proc isCharging*(): bool =
    when defined(windows): 
@@ -28,7 +30,11 @@ proc isCharging*(): bool =
             of 9: return true
             else: return false
    else:
-        var status_raw = "wip"
+        var status_raw = execCmdEx("cat /sys/class/power_supply/BAT0/status")[0].strip
+        if contains("Dis", status_raw):
+            return true
+        else:
+            return false
         
 when defined(windows):
     proc hideWindow*(hide = true) = # Thanks enthus1ast
