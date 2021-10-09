@@ -10,7 +10,7 @@
 2) As annoying as possible (annoying-ness can be changed by using `remindEvery` in `config.json`)
 3) Cross-platform. In theory works on all different OS Distributions 
 4) That's it. This software is meant for 1 job and 1 job only
-##### Currently tested on Windows 10, MacOS X "Monterey" and Arch Linux
+##### Currently tested on Windows 10, macOS Catalina and Arch Linux
 
 ## Config.json explanation
 <p align=center>
