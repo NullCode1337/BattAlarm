@@ -1,3 +1,4 @@
+import std/os
 import BattVars 
 import std/strutils
 from std/osproc   import execCmdEx
@@ -12,9 +13,13 @@ proc checkLife*(): int =
             raise newException(ValueError, "Invalid EstimatedCharge")
         else: return life
     else:
-        life = strip(execCmdEx("cat /sys/class/power_supply/BAT0/capacity")[0]).parseint # WIP
-        return life
-
+        if dirExists("/sys/class/power_supply/BAT0"):
+            life = strip(execCmdEx("cat /sys/class/power_supply/BAT0/capacity")[0]).parseint 
+            return life
+        if dirExists("/sys/class/power_supply/BAT1"):
+            life = strip(execCmdEx("cat /sys/class/power_supply/BAT1/capacity")[0]).parseint
+            return life
+            
 proc isCharging*(): bool =
    when defined(windows): 
        var status_raw = execCmdEx("WMIC PATH Win32_Battery Get BatteryStatus")[0].replace("\n", "")
@@ -30,11 +35,14 @@ proc isCharging*(): bool =
             of 9: return true
             else: return false
    else:
-        var status_raw = execCmdEx("cat /sys/class/power_supply/BAT0/status")[0].strip
-        if contains("Dis", status_raw):
-            return true
-        else:
-            return false
+       if dirExists("/sys/class/power_supply/BAT0"):
+            var status_raw = execCmdEx("cat /sys/class/power_supply/BAT0/status")[0].strip
+            if contains("Dis", status_raw): return true
+            else: return false
+       if dirExists("/sys/class/power_supply/BAT1"):
+            var status_raw = execCmdEx("cat /sys/class/power_supply/BAT1/status")[0].strip
+            if contains("Dis", status_raw): return true
+            else: return false
         
 when defined(windows):
     proc hideWindow*(hide = true) = # Thanks enthus1ast
