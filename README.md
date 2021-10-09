@@ -8,7 +8,7 @@
 ## Features:
 1) As small and fast as possible (342~kb)
 2) As annoying as possible (annoying-ness can be changed by using `remindEvery` in `config.json`)
-3) Cross-compatible. In theory works on all different OS Distributions 
+3) Cross-platform. In theory works on all different OS Distributions 
 4) That's it. This software is meant for 1 job and 1 job only
 ##### Currently tested on Windows 10 and Arch Linux. Might work on MacOS
 
