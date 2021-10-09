@@ -1,11 +1,13 @@
 import std/os
 import std/strformat
+from std/osproc import execCmd
 import AudioPlayer, BattProcs, BattVars, GUI_Helper
 
 when defined(windows): 
     let str_rm = " seconds\n\nThis window will be hidden in 5 seconds..."
 else: 
     let str_rm = " seconds"
+    discard execCmd("clear")
     
 if checker: runGUI()
 else:
